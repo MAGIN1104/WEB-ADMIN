@@ -3,19 +3,6 @@ body {
   padding: 0;
   margin-top: 0;
 }
-.background-medium {
-  margin-top: 0;
-  width: 70%;
-  height: 100vh;
-  background-color: #3f50b5;
-}
-.container-login {
-  display: flex;
-  align-items: center;
-  width: 30%;
-  padding: 3rem;
-}
-
 p {
   display: flex;
   justify-content: center;
@@ -38,14 +25,28 @@ svg {
   height: 5rem;
   margin: 1rem 0;
 }
-.body_login {
+.left-icon {
+  width: 30rem;
+  height: 30rem;
+  margin: 1rem 0;
+}
+.left_area {
   position: relative;
   margin-top: 0;
   width: 100%;
   height: 100vh;
   background-color: #3f50b5;
 }
-.login_area{
+
+.left_area_contain {
+  position: absolute;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  margin: 0 10rem;
+}
+
+.right_area {
   align-items: center;
   background-color: #ffffff;
   display: flex;
@@ -53,33 +54,39 @@ svg {
   position: absolute;
   right: 0;
 }
-.lateral-card{
-  position: absolute;
-  left: 0;
-}
-.card-login{
+
+.card-login {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0rem 1rem;
+  padding: 0rem 2rem;
   width: 380px;
 }
 
 @media (max-width: 375px) {
-  .card-login{
-    padding: 0rem 1rem;
+  .card-login {
+    margin: 0 1.5rem;
+    padding: 0rem 2rem;
     width: 100%;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000,
+      5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   }
 }
 @media (min-width: 376px) and (max-width: 768px) {
-  .card-login{
-    padding: 0rem 1rem;
+  .card-login {
+    padding: 0rem 2rem;
     width: 400px;
   }
 }
 
-a{
+a {
   text-decoration: none;
   font-style: italic;
   color: #3f50b5;
+}
+.css-1d1r5q-MuiFormHelperText-root.Mui-error {
+  color: #d32f2f;
+  display: flex;
+  justify-content: flex-start;
 }
