@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import icons from "../assets/svg/svg-icons.svg";
 import "../assets/styles/index.css";
 import "@fontsource/roboto/300.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 export const LoginPage = () => {
   const [formState, setformState] = useState({
     email: "",
@@ -20,7 +20,6 @@ export const LoginPage = () => {
       [name]: value,
     });
   };
-  useEffect(() => {}, [formState]);
   const regex = new RegExp(/^[\w-]+@([\w-]+\.)+[\w-]{2,4}$/);
   const onLogin = () => {
     navigate("/admin", {
@@ -30,23 +29,24 @@ export const LoginPage = () => {
   return (
     <div className="left_area">
       <div className="left_area_contain">
+        <div className="container">
           <svg className="left-icon">
             <use xlinkHref={`${icons}#svg-park`} />
           </svg>
+        </div>
       </div>
-      <div className="right_area">
+      <div className="right_area_contain">
         <div className="card-login">
           <div className="logo">
             <svg>
               <use xlinkHref={`${icons}#svg-avatar`} />
             </svg>
           </div>
-          <Typography align="center" variant="h6" component="h2">
+          <Typography align="center" variant="h5" component="h2">
             Hello Again!
           </Typography>
           <p className="parrafo mt-2">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-            vitae nulla ratione doloribus sunt quod!
           </p>
           <TextField
             name="email"
@@ -89,7 +89,7 @@ export const LoginPage = () => {
           />
           <Button
             sx={{
-              mb: 2,
+              my: 4,
               width: "100%",
               outlineColor: "#3f50b5",
               color: "#3f50b5",
