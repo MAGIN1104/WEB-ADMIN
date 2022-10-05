@@ -1,9 +1,4 @@
-
-import { AppRoute } from "./router/AppRoute";
+import { AppRouter } from "./router/AppRouter";
 export const AdminApp = () => {
-  return (
-    <>
-      <AppRoute/>
-    </>
-  );
+  return <AppRouter />;
 };

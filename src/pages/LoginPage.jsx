@@ -1,28 +1,20 @@
+import { useNavigate } from "react-router-dom";
+import { useFormLogin } from "../hooks/useFormLogin";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { useNavigate } from "react-router-dom";
 import icons from "../assets/svg/svg-icons.svg";
-import "../assets/styles/index.css";
+import "../assets/styles/index.scss";
 import "@fontsource/roboto/300.css";
-import { useState } from "react";
 export const LoginPage = () => {
-  const [formState, setformState] = useState({
+  const { email, password, onInputChange } = useFormLogin({
     email: "",
     password: "",
   });
-  const navigate = useNavigate();
-  const { email, password } = formState;
-  const onInputChange = ({ target }) => {
-    const { name, value } = target;
-    setformState({
-      ...formState,
-      [name]: value,
-    });
-  };
   const regex = new RegExp(/^[\w-]+@([\w-]+\.)+[\w-]{2,4}$/);
+  const navigate = useNavigate();
   const onLogin = () => {
-    navigate("/admin", {
+    navigate("/admin/home", {
       replace: true,
     });
   };
@@ -38,7 +30,7 @@ export const LoginPage = () => {
       <div className="right_area_contain">
         <div className="card-login">
           <div className="logo">
-            <svg>
+            <svg className="logo_svg">
               <use xlinkHref={`${icons}#svg-avatar`} />
             </svg>
           </div>
